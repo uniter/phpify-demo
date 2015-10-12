@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "name": "phpify-demo",
+  "description": "Demo hybrid JS/PHP client-side app with PHPify",
+  "keywords": [
+    "php",
+    "phpify"
+  ],
+  "homepage": "https://github.com/uniter/phpify-demo",
+  "author": "Dan Phillimore <dan@ovms.co> (http://ovms.co)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uniter/phpify-demo"
+  },
+  "bugs": {
+    "email": "dan@ovms.co",
+    "url": "http://github.com/uniter/phpify-demo/issues"
+  },
+  "main": "index",
+  "scripts": {
+    "build-fs": "node build/fs",
+    "build": "npm run build-fs && mkdir -p dist && browserify -p bundle-collapser/plugin index | uglifyjs > dist/bundle.js",
+    "jshint": "jshint .",
+    "mocha": "mocha --recursive test/",
+    "test": "npm run jshint && npm run mocha"
+  },
+  "dependencies": {
+    "jquery": "^1.11.3",
+    "lodash": "^3.10.0"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "bundle-collapser": "^1.2.1",
+    "chai": "^2.3.0",
+    "globby": "^2.1.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "nowdoc": "^1.0.0",
+    "sinon": "~1.15",
+    "sinon-chai": "^2.7.0",
+    "uglify-js": "^2.5.0"
+  },
+  "engines": {
+    "node": ">=0.6"
+  },
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "phpify"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "uniter/phpify-demo",
+    "description": "PHPify demo",
+    "autoload": {
+        "psr-4": {
+            "Phpify\\Demo\\": "php/src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dan Phillimore",
+            "email": "dan@ovms.co"
+        }
+    ]
+}
