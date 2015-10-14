@@ -42,7 +42,7 @@ phpEngine.getStderr().on('data', function (data) {
 phpEngine.execute().then(function (transformer) {
     var ChangeListener = require('./js/Listener/ChangeListener'),
         DocumentReadyListener = require('./js/Listener/DocumentReadyListener'),
-        changeListener = new ChangeListener(document, transformer.getNative()),
+        changeListener = new ChangeListener(document, transformer.unwrapForJS()),
         documentReadyListener = new DocumentReadyListener($, changeListener);
 
     documentReadyListener.listen();

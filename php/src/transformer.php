@@ -20,6 +20,11 @@ namespace {
         return true;
     }
 
+    function strtoupper($string)
+    {
+        return 'UP' . $string . 'PER';
+    }
+
     class InvalidArgumentException extends Exception
     {
     }

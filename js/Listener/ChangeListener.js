@@ -18,10 +18,10 @@ ChangeListener.prototype.listen = function () {
     var listener = this,
         document = listener.document;
 
-    document.getElementById('input').addEventListener('change', function () {
-        var transformed = listener.transformer.transform('upper', this.value);
-
-        document.getElementById('output').textContent = transformed;
+    document.getElementById('input').addEventListener('input', function () {
+        listener.transformer.callMethod('transform', 'upper', this.value).then(function (transformed) {
+            document.getElementById('output').textContent = transformed.unwrapForJS();
+        });
     });
 };
 
