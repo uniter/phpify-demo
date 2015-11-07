@@ -19,9 +19,9 @@ ChangeListener.prototype.listen = function () {
         document = listener.document;
 
     document.getElementById('input').addEventListener('input', function () {
-        listener.transformer.callMethod('transform', 'upper', this.value).then(function (transformed) {
-            document.getElementById('output').textContent = transformed.unwrapForJS();
-        });
+        var transformed = listener.transformer.callMethod('transform', 'upper', this.value);
+
+        document.getElementById('output').textContent = transformed.unwrapForJS();
     });
 };
 
