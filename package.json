@@ -27,7 +27,8 @@
   "dependencies": {
     "jquery": "^1.11.3",
     "lodash": "^3.10.0",
-    "phpify": "~1"
+    "phpify": "~1",
+    "webpack": "^1.12.3"
   },
   "devDependencies": {
     "browserify": "^11.0.1",
@@ -39,6 +40,7 @@
     "nowdoc": "^1.0.0",
     "sinon": "~1.15",
     "sinon-chai": "^2.7.0",
+    "transform-loader": "^0.2.3",
     "uglify-js": "^2.5.0"
   },
   "engines": {
