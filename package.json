@@ -27,7 +27,7 @@
   "dependencies": {
     "jquery": "^1.11.3",
     "lodash": "^3.10.0",
-    "phpify": "~0.3"
+    "phpify": "~0.6"
   },
   "devDependencies": {
     "browserify": "^11.0.1",
@@ -49,5 +49,10 @@
     "transform": [
       "phpify"
     ]
+  },
+  "phpify": {
+    "phpToJS": {
+      "sync": true
+    }
   }
 }

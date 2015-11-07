@@ -39,13 +39,12 @@ phpEngine.getStderr().on('data', function (data) {
 });
 
 // Go!
-phpEngine.execute().then(function (transformer) {
-    var ChangeListener = require('./js/Listener/ChangeListener'),
+(function () {
+    var transformer = phpEngine.execute().unwrapForJS(),
+        ChangeListener = require('./js/Listener/ChangeListener'),
         DocumentReadyListener = require('./js/Listener/DocumentReadyListener'),
-        changeListener = new ChangeListener(document, transformer.unwrapForJS()),
+        changeListener = new ChangeListener(document, transformer),
         documentReadyListener = new DocumentReadyListener($, changeListener);
 
     documentReadyListener.listen();
-}).catch(function (error) {
-    console.warn('ERROR: ' + error.toString());
-});
+}());
