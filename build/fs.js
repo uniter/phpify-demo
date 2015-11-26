@@ -13,8 +13,6 @@ var fs = require('fs'),
     path = require('path'),
     files = globby.sync([
         __dirname + '/../php/**/*.php',
-        __dirname + '/../vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
-        __dirname + '/../vendor/querypath/**/*.php',
         __dirname + '/../vendor/autoload.php',
         __dirname + '/../vendor/composer/**/*.php'
     ]),
